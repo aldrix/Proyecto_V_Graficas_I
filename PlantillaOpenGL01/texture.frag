@@ -21,23 +21,19 @@ uniform float _rkeyrabbit;
 uniform float _gkeyrabbit;
 uniform float _bkeyrabbit;
 
-uniform int _pattern01;
-uniform int _pattern02;
-uniform int _pattern03;
-uniform int _pattern04;
+uniform bool _pattern01;
+uniform bool _pattern02;
+uniform bool _pattern03;
+uniform bool _pattern04;
 
 uniform bool _filtering;
-
-uniform bool _light1;
-uniform bool _light2;
-uniform bool _light3;
-uniform bool _light4;
 
 uniform int _iheight;
 uniform int _iwidth;
 
 #define texel_size_x 1.0 / _iwidth
 #define texel_size_y 1.0 / _iheight	
+
 
 /*Funcion que permite aplicar un filtro bilineal a una textura*/
 vec4 texture2D_bilinear( sampler2D tex, vec2 uv ) {
@@ -62,17 +58,6 @@ void main(void) {
 
 	vec4 cFinal;
 	vec4 colorPattern;
-	vec4 light = vec4(0.0,0.0,0.0,0.0);
-
-	if (_filtering && _light1){
-		light = vec4(1.0,0.0,0.0,1.0);
-	} else if (_filtering && _light2){
-		light = vec4(0.0,1.0,0.0,1.0);
-	} else if (_filtering && _light3){
-		light = vec4(0.0,0.0,1.0,1.0);
-	} else{
-		light = vec4(0.0,1.0,1.0,1.0);
-	} 
 
 	//Tomamos las texturas.
 	vec4 cTex01 = texture2D(texBaked_flat, gl_TexCoord[0].st);
@@ -90,7 +75,6 @@ void main(void) {
 		cTex05 = texture2D_bilinear(texBaked_checker, gl_TexCoord[0].st);
 	}
 
-
 	//Colores para el patron del piso.
 	vec4 color00 = vec4(0,0,0,1);     //Color neutro.
 	vec4 color01 = vec4(0,0.6,0.6,1); //Color cian.
@@ -98,13 +82,13 @@ void main(void) {
 	vec4 color03 = vec4(0.4,0,0.7,1); //Morado.
 	vec4 color04 = vec4(0,0.7,0,1);   //Verde limon.
 
-	if (_pattern01==1) 
+	if (_pattern01) 
 		colorPattern = color01;
-	else if (_pattern02==1) 
+	else if (_pattern02) 
 			colorPattern = color02;
-	else if (_pattern03==1) 
+	else if (_pattern03) 
 			colorPattern = color03;
-	else if (_pattern04==1) 
+	else if (_pattern04) 
 			colorPattern = color04;
 	else 
 		colorPattern = color00;
@@ -119,5 +103,5 @@ void main(void) {
 	         max(_mix01,0.0)*cTex01*max(_mix02,0.0)*cTex02 + 
 			 max(_mix01,0.0)*cTex01*max(_mix03,0.0)*cTex03;
 	
-	gl_FragColor = cFinal;
+	gl_FragColor = mix(cFinal, colorPattern*cTex05, 0.5);
 }

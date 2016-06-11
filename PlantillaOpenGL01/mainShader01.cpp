@@ -29,10 +29,10 @@ cwc::glShaderManager SM;
 cwc::glShader *shader;
 
 //Variables para activar los patrones del suelo.
-int pattern01 = 0;
-int pattern02 = 0;
-int pattern03 = 0;
-int pattern04 = 0;
+bool pattern01 = 0;
+bool pattern02 = 0;
+bool pattern03 = 0;
+bool pattern04 = 0;
 
 //Variables para el manejo de intensidad de la luz
 float baked_flat_mix;
@@ -57,12 +57,6 @@ float baked_keyrabbit_b;
 
 //Variables para el manejo del Filtro Bilineal
 bool bilinear_filtering;
-
-//Variables para el manejo de los colores del Filtro Bilineal
-bool filtering_light01;
-bool filtering_light02;
-bool filtering_light03;
-bool filtering_light04;
 
 
 //Variables para las Texturas
@@ -226,11 +220,6 @@ void init(){
 	baked_keyrabbit_b = 1.0;
 
 	bilinear_filtering = false;
-
-	filtering_light01 = false;
-	filtering_light02 = false;
-	filtering_light03 = false;
-	filtering_light04 = false;
 }
 
 
@@ -354,34 +343,34 @@ void Keyboard(unsigned char key, int x, int y) {
 
 	/*----------------------------- Patron Piso -----------------------------*/
 	case '3':  //Activa el patron 1
-		pattern01 = 1;
-		pattern02 = 0;
-		pattern03 = 0;
-		pattern04 = 0;
+		pattern01 = true;
+		pattern02 = false;
+		pattern03 = false;
+		pattern04 = false;
 		break;
 	case '4':  //Activa el patron 2
-		pattern01 = 0;
-		pattern02 = 1;
-		pattern03 = 0;
-		pattern04 = 0;
+		pattern01 = false;
+		pattern02 = true;
+		pattern03 = false;
+		pattern04 = false;
 		break;
 	case '5':  //Activa el patron 3
-		pattern01 = 0;
-		pattern02 = 0;
-		pattern03 = 1;
-		pattern04 = 0;
+		pattern01 = false;
+		pattern02 = false;
+		pattern03 = true;
+		pattern04 = false;
 		break;
 	case '6':  //Activa el patron 4
-		pattern01 = 0;
-		pattern02 = 0;
-		pattern03 = 0;
-		pattern04 = 1;
+		pattern01 = false;
+		pattern02 = false;
+		pattern03 = false;
+		pattern04 = true;
 		break; 
 	case '7':  //Activa el patron 4
-		pattern01 = 0;
-		pattern02 = 0;
-		pattern03 = 0;
-		pattern04 = 0;
+		pattern01 = false;
+		pattern02 = false;
+		pattern03 = false;
+		pattern04 = false;
 		break;
   }
   glutPostRedisplay();
@@ -482,20 +471,15 @@ void render(){
 	shader->setUniform1f("_gkeyrabbit",baked_keyrabbit_g);
 	shader->setUniform1f("_bkeyrabbit",baked_keyrabbit_b);
 
-	shader->setUniform1i("_pattern01",pattern01);
-	shader->setUniform1i("_pattern02",pattern02);
-	shader->setUniform1i("_pattern03",pattern03);
-	shader->setUniform1i("_pattern04",pattern04);
+	shader->setUniform1f("_pattern01",pattern01);
+	shader->setUniform1f("_pattern02",pattern02);
+	shader->setUniform1f("_pattern03",pattern03);
+	shader->setUniform1f("_pattern04",pattern04);
 
 	shader->setUniform1i("_iheight",iheight);
 	shader->setUniform1i("_iwidth",iwidth);
 
 	shader->setUniform1f("_filtering",bilinear_filtering);
-
-	shader->setUniform1f("_light1",filtering_light01);
-	shader->setUniform1f("_light2",filtering_light02);
-	shader->setUniform1f("_light3",filtering_light03);
-	shader->setUniform1f("_light4",filtering_light04);
 
 	// Codigo para el mesh	
 	glEnable(GL_NORMALIZE);
