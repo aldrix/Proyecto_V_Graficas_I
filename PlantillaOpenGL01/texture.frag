@@ -76,11 +76,11 @@ void main(void) {
 	}
 
 	//Colores para el patron del piso.
-	vec4 color00 = vec4(0,0,0,1);     //Color neutro.
-	vec4 color01 = vec4(0,0.6,0.6,1); //Color cian.
-	vec4 color02 = vec4(0.7,0.6,0,1); //Amarillo tostado.
-	vec4 color03 = vec4(0.4,0,0.7,1); //Morado.
-	vec4 color04 = vec4(0,0.7,0,1);   //Verde limon.
+	vec4 color00 = vec4(0,0,0,cTex05.w);     //Color neutro.
+	vec4 color01 = vec4(0,0.6,0.6,cTex05.w); //Color cian.
+	vec4 color02 = vec4(0.7,0.6,0,cTex05.w); //Amarillo tostado.
+	vec4 color03 = vec4(0.4,0,0.7,cTex05.w); //Morado.
+	vec4 color04 = vec4(0,0.7,0,cTex05.w);   //Verde limon.
 
 	if (_pattern01) 
 		colorPattern = color01;
