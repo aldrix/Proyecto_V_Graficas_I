@@ -28,12 +28,28 @@ using namespace std;
 cwc::glShaderManager SM;
 cwc::glShader *shader;
 
+//Variables para el manejo de intensidad de la luz
 float baked_flat_mix;
 float baked_fill01_mix;
 float baked_fill02_mix;
 float baked_keyrabbit_mix;
 
-//Texturas
+//Variables para el manejo de los componentes RGB de la textura fill01
+float baked_fill01_r;
+float baked_fill01_g;
+float baked_fill01_b;
+
+//Variables para el manejo de los componentes RGB de la textura fill02
+float baked_fill02_r;
+float baked_fill02_g;
+float baked_fill02_b;
+
+//Variables para el manejo de los componentes RGB de la textura fill01
+float baked_keyrabbit_r;
+float baked_keyrabbit_g;
+float baked_keyrabbit_b;
+
+//Variables para las Texturas
 static GLuint texBaked_flat;
 unsigned char* imageBaked_flat;
 
@@ -111,16 +127,17 @@ void init(){
    glEnable(GL_DEPTH_TEST);
    
    //Cargamos la textura baked_flat correspondiente al color plano uniforme.
-   glGenTextures(1, &texBaked_flat);
-   glBindTexture(GL_TEXTURE_2D, texBaked_flat);
+   glGenTextures(1, &texBaked_flat);              //Textura que vamos a renderizar.
+   glBindTexture(GL_TEXTURE_2D, texBaked_flat);   //Enlazamos con la nueva textura anterior creada.
 
+   //Filtros aplicados.
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
    imageBaked_flat = glmReadPPM("baked_flat.ppm", &iwidth, &iheight);
-   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iwidth, iheight, 0, GL_RGB, GL_UNSIGNED_BYTE, imageBaked_flat);
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iwidth, iheight, 0, GL_RGB, GL_UNSIGNED_BYTE, imageBaked_flat); //Le damos la imagen a OpenGL.
   
 	//Cargamos la textura baked_fill01 que corresponde a la Iluminación de relleno 01.
    glGenTextures(1, &texBaked_fill01);
@@ -178,11 +195,25 @@ void init(){
 	baked_fill01_mix    = 0.0;
 	baked_fill02_mix    = 0.0;
 	baked_keyrabbit_mix = 1.0;
+
+	baked_fill01_r = 1.0;
+	baked_fill01_g = 1.0;
+	baked_fill01_b = 1.0;
+
+	baked_fill02_r = 1.0;
+	baked_fill02_g = 1.0;
+	baked_fill02_b = 1.0;
+
+	baked_keyrabbit_r = 1.0;
+	baked_keyrabbit_g = 1.0;
+	baked_keyrabbit_b = 1.0;
 }
 
 
 void Keyboard(unsigned char key, int x, int y) {
   switch (key) {
+
+	/*------------------------ Intensidad de las luces ----------------------*/
 	case '1':  //Incrementa la intensidad de la luz ambiental (baked_flat).
 		baked_flat_mix += 0.05;
 		break;
@@ -213,6 +244,103 @@ void Keyboard(unsigned char key, int x, int y) {
 	case 'X':
 		baked_keyrabbit_mix -= 0.05;
 		break;
+
+	/*----------------------- Intensidad de los colores ---------------------*/
+	case 'e':  //Incremente el componente R en 0.05 del color en la luz de relleno 01
+	case 'E':
+		baked_fill01_r += 0.05;
+		break;
+	case 'r':  //Incremente el componente G en 0.05 del color en la luz de relleno 01
+	case 'R':
+		baked_fill01_g += 0.05;
+		break;
+	case 't':  //Incremente el componente B en 0.05 del color en la luz de relleno 01
+	case 'T':
+		baked_fill01_b += 0.05;
+		break;
+	case 'y':  //Reduce el componente R en 0.05 del color en la luz de relleno 01
+	case 'Y':
+		baked_fill01_r -= 0.05;
+		break;
+	case 'u':  //Reduce el componente G en 0.05 del color en la luz de relleno 01
+	case 'U':
+		baked_fill01_g -= 0.05;
+		break;
+	case 'i':  //Reduce el componente B en 0.05 del color en la luz de relleno 01
+	case 'I':
+		baked_fill01_b -= 0.05;
+		break;
+	case 'd':  
+	case 'D':
+		baked_fill02_r += 0.05;
+		break;
+	case 'f':  
+	case 'F':
+		baked_fill02_g += 0.05;
+		break;
+	case 'g':  
+	case 'G':
+		baked_fill02_b += 0.05;
+		break;
+	case 'h':  
+	case 'H':
+		baked_fill02_r -= 0.05;
+		break;
+	case 'j':  
+	case 'J':
+		baked_fill02_g -= 0.05;
+		break;
+	case 'k':  
+	case 'K':
+		baked_fill02_r -= 0.05;
+		break;
+	case 'c':  
+	case 'C':
+		baked_keyrabbit_r += 0.05;
+		break;
+	case 'v':  
+	case 'V':
+		baked_keyrabbit_g += 0.05;
+		break;
+	case 'b':  
+	case 'B':
+		baked_keyrabbit_b += 0.05;
+		break;
+	case 'n': 
+	case 'N':
+		baked_keyrabbit_r -= 0.05;
+		break;
+	case 'm':  
+	case 'M':
+		baked_keyrabbit_g -= 0.05;
+		break;
+	case ',':  
+		baked_keyrabbit_b -= 0.05;
+		break;
+
+	/*---------------------------- Filtro Bilinear --------------------------*/
+	/*case 'o':  //Reduce la intensidad de la luz central del conjeo en 0.05 (baked_keyrabbit).
+	case 'O':
+		baked_keyrabbit_mix -= 0.05;
+		break;
+	case 'p':  //Reduce la intensidad de la luz central del conjeo en 0.05 (baked_keyrabbit).
+	case 'P':
+		baked_keyrabbit_mix -= 0.05;
+		break;*/
+
+	/*----------------------------- Patron Piso -----------------------------*/
+	/*case '3':  //Incrementa la intensidad de la luz ambiental (baked_flat).
+		baked_flat_mix += 0.05;
+		break;
+	case '4':  //Reduce la intensidad de la luz ambiental (baked_flat).
+		baked_flat_mix -= 0.05;
+		break;
+	case '5':  //Incrementa la intensidad de la luz ambiental (baked_flat).
+		baked_flat_mix += 0.05;
+		break;
+	case '6':  //Reduce la intensidad de la luz ambiental (baked_flat).
+		baked_flat_mix -= 0.05;
+		break;   */
   }
 
   glutPostRedisplay();
@@ -302,6 +430,18 @@ void render(){
 	shader->setTexture("texBaked_fill02",texBaked_fill02,3);
 	shader->setTexture("texBaked_keyrabbit",texBaked_keyrabbit,0);
 	shader->setTexture("texBaked_checker",texBaked_checker,4);
+
+	shader->setUniform1f("_rfill01",baked_fill01_r);
+	shader->setUniform1f("_gfill01",baked_fill01_g);
+	shader->setUniform1f("_bfill01",baked_fill01_b);
+
+	shader->setUniform1f("_rfill02",baked_fill02_r);
+	shader->setUniform1f("_gfill02",baked_fill02_g);
+	shader->setUniform1f("_bfill02",baked_fill02_b);
+
+	shader->setUniform1f("_rkeyrabbit",baked_keyrabbit_r);
+	shader->setUniform1f("_gkeyrabbit",baked_keyrabbit_g);
+	shader->setUniform1f("_bkeyrabbit",baked_keyrabbit_b);
 
 	// Codigo para el mesh	
 	glEnable(GL_NORMALIZE);
