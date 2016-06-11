@@ -205,7 +205,7 @@ void init(){
 	baked_flat_mix      = 1.0;
 	baked_fill01_mix    = 0.0;
 	baked_fill02_mix    = 0.0;
-	baked_keyrabbit_mix = 1.0;
+	baked_keyrabbit_mix = 1.4;
 
 	baked_fill01_r = 1.0;
 	baked_fill01_g = 1.0;
