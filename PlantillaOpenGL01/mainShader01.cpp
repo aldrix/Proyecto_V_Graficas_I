@@ -28,6 +28,12 @@ using namespace std;
 cwc::glShaderManager SM;
 cwc::glShader *shader;
 
+//Variables para activar los patrones del suelo.
+int pattern01 = 0;
+int pattern02 = 0;
+int pattern03 = 0;
+int pattern04 = 0;
+
 //Variables para el manejo de intensidad de la luz
 float baked_flat_mix;
 float baked_fill01_mix;
@@ -329,22 +335,40 @@ void Keyboard(unsigned char key, int x, int y) {
 		break;*/
 
 	/*----------------------------- Patron Piso -----------------------------*/
-	/*case '3':  //Incrementa la intensidad de la luz ambiental (baked_flat).
-		baked_flat_mix += 0.05;
+	case '3':  //Activa el patron 1
+		pattern01 = 1;
+		pattern02 = 0;
+		pattern03 = 0;
+		pattern04 = 0;
 		break;
-	case '4':  //Reduce la intensidad de la luz ambiental (baked_flat).
-		baked_flat_mix -= 0.05;
+	case '4':  //Activa el patron 2
+		pattern01 = 0;
+		pattern02 = 1;
+		pattern03 = 0;
+		pattern04 = 0;
 		break;
-	case '5':  //Incrementa la intensidad de la luz ambiental (baked_flat).
-		baked_flat_mix += 0.05;
+	case '5':  //Activa el patron 3
+		pattern01 = 0;
+		pattern02 = 0;
+		pattern03 = 1;
+		pattern04 = 0;
 		break;
-	case '6':  //Reduce la intensidad de la luz ambiental (baked_flat).
-		baked_flat_mix -= 0.05;
-		break;   */
+	case '6':  //Activa el patron 4
+		pattern01 = 0;
+		pattern02 = 0;
+		pattern03 = 0;
+		pattern04 = 1;
+		break; 
+	case '7':  //Activa el patron 4
+		pattern01 = 0;
+		pattern02 = 0;
+		pattern03 = 0;
+		pattern04 = 0;
+		break;
   }
-
   glutPostRedisplay();
 }
+
 
 void recursive_render (const aiScene *sc, const aiNode* nd)
 {
@@ -425,10 +449,10 @@ void render(){
 	shader->setUniform1f("_mix03",baked_fill02_mix);
 	shader->setUniform1f("_mix04",baked_keyrabbit_mix);
 
-	shader->setTexture("texBaked_flat",texBaked_flat,1);
-	shader->setTexture("texBaked_fill01",texBaked_fill01,2);
-	shader->setTexture("texBaked_fill02",texBaked_fill02,3);
-	shader->setTexture("texBaked_keyrabbit",texBaked_keyrabbit,0);
+	shader->setTexture("texBaked_flat",texBaked_flat,0);
+	shader->setTexture("texBaked_fill01",texBaked_fill01,1);
+	shader->setTexture("texBaked_fill02",texBaked_fill02,2);
+	shader->setTexture("texBaked_keyrabbit",texBaked_keyrabbit,3);
 	shader->setTexture("texBaked_checker",texBaked_checker,4);
 
 	shader->setUniform1f("_rfill01",baked_fill01_r);
@@ -442,6 +466,11 @@ void render(){
 	shader->setUniform1f("_rkeyrabbit",baked_keyrabbit_r);
 	shader->setUniform1f("_gkeyrabbit",baked_keyrabbit_g);
 	shader->setUniform1f("_bkeyrabbit",baked_keyrabbit_b);
+
+	shader->setUniform1i("_pattern01",pattern01);
+	shader->setUniform1i("_pattern02",pattern02);
+	shader->setUniform1i("_pattern03",pattern03);
+	shader->setUniform1i("_pattern04",pattern04);
 
 	// Codigo para el mesh	
 	glEnable(GL_NORMALIZE);
