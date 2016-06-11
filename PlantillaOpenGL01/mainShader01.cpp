@@ -29,10 +29,10 @@ cwc::glShaderManager SM;
 cwc::glShader *shader;
 
 //Variables para activar los patrones del suelo.
-bool pattern01 = 0;
-bool pattern02 = 0;
-bool pattern03 = 0;
-bool pattern04 = 0;
+bool pattern01 = false;
+bool pattern02 = false;
+bool pattern03 = false;
+bool pattern04 = false;
 
 //Variables para el manejo de intensidad de la luz
 float baked_flat_mix;
