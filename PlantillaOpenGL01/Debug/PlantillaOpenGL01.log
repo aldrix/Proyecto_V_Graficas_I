@@ -1,4 +1,4 @@
-﻿Build started 6/11/2016 9:35:05 AM.
+﻿Build started 6/11/2016 12:50:20 PM.
      1>Project "C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\PlantillaOpenGL01\PlantillaOpenGL01.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\dev\Assimp\include /IC:\dev\opengl\freeglut\include /I"C:\dev\opengl\glew-1.7.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt mainShader01.cpp
@@ -43,8 +43,8 @@
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(299): warning C4305: '+=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(303): warning C4305: '+=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(307): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(311): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(315): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(310): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(314): warning C4305: '-=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(318): warning C4305: '-=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(410): warning C4101: 'zLocal' : variable local sin referencia
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(410): warning C4101: 'xExtent' : variable local sin referencia
@@ -61,4 +61,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.82
+Time Elapsed 00:00:01.59

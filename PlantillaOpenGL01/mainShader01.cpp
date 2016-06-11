@@ -191,7 +191,7 @@ void init(){
    shader = SM.loadfromFile("texture.vert","texture.frag"); // load (and compile, link) from file
   		  if (shader==0) 
 			  std::cout << "Error Loading, compiling or linking shader\n";
-	baked_flat_mix      = 0.0;
+	baked_flat_mix      = 1.0;
 	baked_fill01_mix    = 0.0;
 	baked_fill02_mix    = 0.0;
 	baked_keyrabbit_mix = 1.0;
@@ -246,75 +246,75 @@ void Keyboard(unsigned char key, int x, int y) {
 		break;
 
 	/*----------------------- Intensidad de los colores ---------------------*/
-	case 'e':  //Incremente el componente R en 0.05 del color en la luz de relleno 01
-	case 'E':
+	case 't':  //Incremente el componente R en 0.05 del color en la luz de relleno 01
+	case 'T':
 		baked_fill01_r += 0.05;
 		break;
 	case 'r':  //Incremente el componente G en 0.05 del color en la luz de relleno 01
 	case 'R':
 		baked_fill01_g += 0.05;
 		break;
-	case 't':  //Incremente el componente B en 0.05 del color en la luz de relleno 01
-	case 'T':
+	case 'e':  //Incremente el componente B en 0.05 del color en la luz de relleno 01
+	case 'E':
 		baked_fill01_b += 0.05;
 		break;
-	case 'y':  //Reduce el componente R en 0.05 del color en la luz de relleno 01
-	case 'Y':
+	case 'i':  //Reduce el componente R en 0.05 del color en la luz de relleno 01
+	case 'I':
 		baked_fill01_r -= 0.05;
 		break;
 	case 'u':  //Reduce el componente G en 0.05 del color en la luz de relleno 01
 	case 'U':
 		baked_fill01_g -= 0.05;
 		break;
-	case 'i':  //Reduce el componente B en 0.05 del color en la luz de relleno 01
-	case 'I':
+	case 'y':  //Reduce el componente B en 0.05 del color en la luz de relleno 01
+	case 'Y':
 		baked_fill01_b -= 0.05;
 		break;
-	case 'd':  
-	case 'D':
+	case 'g':  //Incremente el componente R en 0.05 del color en la luz de relleno 02
+	case 'G':
 		baked_fill02_r += 0.05;
 		break;
-	case 'f':  
+	case 'f':  //Incremente el componente G en 0.05 del color en la luz de relleno 02
 	case 'F':
 		baked_fill02_g += 0.05;
 		break;
-	case 'g':  
-	case 'G':
+	case 'd':  //Incremente el componente B en 0.05 del color en la luz de relleno 02 
+	case 'D':
 		baked_fill02_b += 0.05;
 		break;
-	case 'h':  
-	case 'H':
-		baked_fill02_r -= 0.05;
-		break;
-	case 'j':  
-	case 'J':
-		baked_fill02_g -= 0.05;
-		break;
-	case 'k':  
+	case 'k':  //Reduce el componente R en 0.05 del color en la luz de relleno 02
 	case 'K':
 		baked_fill02_r -= 0.05;
 		break;
-	case 'c':  
-	case 'C':
+	case 'j':  //Reduce el componente G en 0.05 del color en la luz de relleno 02
+	case 'J':
+		baked_fill02_g -= 0.05;
+		break;
+	case 'h':  //Reduce el componente B en 0.05 del color en la luz de relleno 02
+	case 'H':
+		baked_fill02_r -= 0.05;
+		break;
+	case 'b':  //Incremente el componente R en 0.05 de la luz central del conejo
+	case 'B':
 		baked_keyrabbit_r += 0.05;
 		break;
-	case 'v':  
+	case 'v':  //Incremente el componente G en 0.05 de la luz central del conejo
 	case 'V':
 		baked_keyrabbit_g += 0.05;
 		break;
-	case 'b':  
-	case 'B':
+	case 'c':  //Incremente el componente B en 0.05 de la luz central del conejo
+	case 'C':
 		baked_keyrabbit_b += 0.05;
 		break;
-	case 'n': 
-	case 'N':
+	case ',':  //Reduce el componente R en 0.05 de la luz central del conejo
 		baked_keyrabbit_r -= 0.05;
 		break;
-	case 'm':  
+	case 'm':  //Reduce el componente G en 0.05 de la luz central del conejo
 	case 'M':
 		baked_keyrabbit_g -= 0.05;
 		break;
-	case ',':  
+	case 'n':  //Reduce el componente B en 0.05 de la luz central del conejo
+	case 'N': 
 		baked_keyrabbit_b -= 0.05;
 		break;
 
