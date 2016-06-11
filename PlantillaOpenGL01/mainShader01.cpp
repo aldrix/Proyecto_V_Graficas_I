@@ -55,6 +55,16 @@ float baked_keyrabbit_r;
 float baked_keyrabbit_g;
 float baked_keyrabbit_b;
 
+//Variables para el manejo del Filtro Bilineal
+bool bilinear_filtering;
+
+//Variables para el manejo de los colores del Filtro Bilineal
+bool filtering_light01;
+bool filtering_light02;
+bool filtering_light03;
+bool filtering_light04;
+
+
 //Variables para las Texturas
 static GLuint texBaked_flat;
 unsigned char* imageBaked_flat;
@@ -197,6 +207,7 @@ void init(){
    shader = SM.loadfromFile("texture.vert","texture.frag"); // load (and compile, link) from file
   		  if (shader==0) 
 			  std::cout << "Error Loading, compiling or linking shader\n";
+	
 	baked_flat_mix      = 1.0;
 	baked_fill01_mix    = 0.0;
 	baked_fill02_mix    = 0.0;
@@ -213,6 +224,13 @@ void init(){
 	baked_keyrabbit_r = 1.0;
 	baked_keyrabbit_g = 1.0;
 	baked_keyrabbit_b = 1.0;
+
+	bilinear_filtering = false;
+
+	filtering_light01 = false;
+	filtering_light02 = false;
+	filtering_light03 = false;
+	filtering_light04 = false;
 }
 
 
@@ -325,14 +343,14 @@ void Keyboard(unsigned char key, int x, int y) {
 		break;
 
 	/*---------------------------- Filtro Bilinear --------------------------*/
-	/*case 'o':  //Reduce la intensidad de la luz central del conjeo en 0.05 (baked_keyrabbit).
+	case 'o':  //Activa el Filtro Bilineal.
 	case 'O':
-		baked_keyrabbit_mix -= 0.05;
+		bilinear_filtering = true;
 		break;
-	case 'p':  //Reduce la intensidad de la luz central del conjeo en 0.05 (baked_keyrabbit).
+	case 'p':  //Desactiva el Filtro Bilineal.
 	case 'P':
-		baked_keyrabbit_mix -= 0.05;
-		break;*/
+		bilinear_filtering = false;
+		break;
 
 	/*----------------------------- Patron Piso -----------------------------*/
 	case '3':  //Activa el patron 1
@@ -413,19 +431,16 @@ void recursive_render (const aiScene *sc, const aiNode* nd)
 				
 				glVertex3fv(&mesh->mVertices[index].x);
 			}
-
 			glEnd();
 		}
-
 	}
-
 	// draw all children
 	for (n = 0; n < nd->mNumChildren; ++n) {		
 		recursive_render(sc, nd->mChildren[n]);
 	}
-
 	glPopMatrix();
 }
+
 
 void render(){
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -472,6 +487,13 @@ void render(){
 	shader->setUniform1i("_pattern03",pattern03);
 	shader->setUniform1i("_pattern04",pattern04);
 
+	shader->setUniform1f("_filtering",bilinear_filtering);
+
+	shader->setUniform1f("_light1",filtering_light01);
+	shader->setUniform1f("_light2",filtering_light02);
+	shader->setUniform1f("_light3",filtering_light03);
+	shader->setUniform1f("_light4",filtering_light04);
+
 	// Codigo para el mesh	
 	glEnable(GL_NORMALIZE);
 	glTranslatef(0.0, -2.0, 0.0);
@@ -490,7 +512,6 @@ void render(){
 	
 	glPopMatrix();
 	
-	
 	/*
 	glPushMatrix();
 	glLoadIdentity();	
@@ -498,11 +519,7 @@ void render(){
 	glutSolidSphere(0.2f,30,30);
 	glPopMatrix();*/
 	 
-
 	if (shader) shader->end();
-
-	
-
 	
 	glDisable(GL_BLEND);
 	glDisable(GL_LINE_SMOOTH);
@@ -580,7 +597,6 @@ int main (int argc, char** argv) {
 
 	glutCreateWindow("Test Opengl");
 
-
 	// Codigo para cargar la geometria usando ASSIMP
 
 	aiLogStream stream;
@@ -600,10 +616,7 @@ int main (int argc, char** argv) {
 	// models from the repository (/models-nonbsd may be missing in 
 	// some distributions so we need a fallback from /models!).
 	
-	
 	loadasset( "escenario_proyecto01.obj");
-
-
 
 	init ();
 
@@ -613,5 +626,4 @@ int main (int argc, char** argv) {
 	
 	glutMainLoop();
 	return 0;
-
 }
