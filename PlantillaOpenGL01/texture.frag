@@ -28,11 +28,6 @@ uniform int _pattern04;
 
 uniform bool _filtering;
 
-uniform bool _light1;
-uniform bool _light2;
-uniform bool _light3;
-uniform bool _light4;
-
 uniform int _iheight;
 uniform int _iwidth;
 
@@ -62,17 +57,6 @@ void main(void) {
 
 	vec4 cFinal;
 	vec4 colorPattern;
-	vec4 light = vec4(0.0,0.0,0.0,0.0);
-
-	if (_filtering && _light1){
-		light = vec4(1.0,0.0,0.0,1.0);
-	} else if (_filtering && _light2){
-		light = vec4(0.0,1.0,0.0,1.0);
-	} else if (_filtering && _light3){
-		light = vec4(0.0,0.0,1.0,1.0);
-	} else{
-		light = vec4(0.0,1.0,1.0,1.0);
-	} 
 
 	//Tomamos las texturas.
 	vec4 cTex01 = texture2D(texBaked_flat, gl_TexCoord[0].st);
@@ -89,7 +73,6 @@ void main(void) {
 		cTex04 = texture2D_bilinear(texBaked_keyrabbit, gl_TexCoord[0].st);
 		cTex05 = texture2D_bilinear(texBaked_checker, gl_TexCoord[0].st);
 	}
-
 
 	//Colores para el patron del piso.
 	vec4 color00 = vec4(0,0,0,1);     //Color neutro.
@@ -119,5 +102,5 @@ void main(void) {
 	         max(_mix01,0.0)*cTex01*max(_mix02,0.0)*cTex02 + 
 			 max(_mix01,0.0)*cTex01*max(_mix03,0.0)*cTex03;
 	
-	gl_FragColor = cFinal;
+	gl_FragColor = mix(cFinal,cTex05*colorPattern,0.5);
 }

@@ -1,64 +1,64 @@
-﻿Build started 6/11/2016 5:17:08 PM.
-     1>Project "C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\PlantillaOpenGL01\PlantillaOpenGL01.vcxproj" on node 2 (Build target(s)).
+﻿Compilación iniciada a las 11/06/2016 17:49:08.
+     1>Proyecto "C:\dev\Proyecto_5\Proyecto_V_Graficas_I\PlantillaOpenGL01\PlantillaOpenGL01.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\dev\Assimp\include /IC:\dev\opengl\freeglut\include /I"C:\dev\opengl\glew-1.7.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt mainShader01.cpp
          mainShader01.cpp
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(106): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(106): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(107): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(107): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(109): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(109): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(110): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(110): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(112): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(112): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(113): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(113): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(115): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(115): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(116): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(116): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(127): warning C4101: 'aspectratio' : variable local sin referencia
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(242): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(245): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(249): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(253): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(257): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(261): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(265): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(269): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(275): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(279): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(283): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(287): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(291): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(295): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(299): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(303): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(307): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(311): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(315): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(319): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(323): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(327): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(331): warning C4305: '+=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(334): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(338): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(342): warning C4305: '-=' : truncamiento de 'double' a 'float'
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(449): warning C4101: 'zLocal' : variable local sin referencia
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(449): warning C4101: 'xExtent' : variable local sin referencia
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(450): warning C4101: 'loopX' : variable local sin referencia
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(449): warning C4101: 'xLocal' : variable local sin referencia
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(450): warning C4101: 'loopZ' : variable local sin referencia
-     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(449): warning C4101: 'zExtent' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(99): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(99): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(100): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(100): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(102): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(102): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(103): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(103): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(105): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(105): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(106): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(106): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(108): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(108): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(109): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(109): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(120): warning C4101: 'aspectratio' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(230): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(233): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(237): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(241): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(245): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(249): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(253): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(257): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(263): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(267): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(271): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(275): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(279): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(283): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(287): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(291): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(295): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(299): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(303): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(307): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(311): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(315): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(319): warning C4305: '+=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(322): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(326): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(330): warning C4305: '-=' : truncamiento de 'double' a 'float'
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(437): warning C4101: 'zLocal' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(437): warning C4101: 'xExtent' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(438): warning C4101: 'loopX' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(437): warning C4101: 'xLocal' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(438): warning C4101: 'loopZ' : variable local sin referencia
+     1>c:\dev\proyecto_5\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(437): warning C4101: 'zExtent' : variable local sin referencia
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\dev\Assimp\lib\x86 /LIBPATH:C:\dev\opengl\freeglut\lib /LIBPATH:"C:\dev\opengl\glew-1.7.0\lib" glew32.lib freeglut.lib assimp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.lib" /MACHINE:X86 Debug\glm.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\dev\Proyecto_5\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\dev\Assimp\lib\x86 /LIBPATH:C:\dev\opengl\freeglut\lib /LIBPATH:"C:\dev\opengl\glew-1.7.0\lib" glew32.lib freeglut.lib assimp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\dev\Proyecto_5\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\dev\Proyecto_5\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.lib" /MACHINE:X86 Debug\glm.obj
          Debug\glsl.obj
          Debug\mainShader01.obj
-         PlantillaOpenGL01.vcxproj -> C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.exe
-     1>Done Building Project "C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\PlantillaOpenGL01\PlantillaOpenGL01.vcxproj" (Build target(s)).
+         PlantillaOpenGL01.vcxproj -> C:\dev\Proyecto_5\Proyecto_V_Graficas_I\Debug\PlantillaOpenGL01.exe
+     1>Compilación del proyecto terminada "C:\dev\Proyecto_5\Proyecto_V_Graficas_I\PlantillaOpenGL01\PlantillaOpenGL01.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:02.02
+Tiempo transcurrido 00:00:01.51

@@ -58,13 +58,6 @@ float baked_keyrabbit_b;
 //Variables para el manejo del Filtro Bilineal
 bool bilinear_filtering;
 
-//Variables para el manejo de los colores del Filtro Bilineal
-bool filtering_light01;
-bool filtering_light02;
-bool filtering_light03;
-bool filtering_light04;
-
-
 //Variables para las Texturas
 static GLuint texBaked_flat;
 unsigned char* imageBaked_flat;
@@ -226,11 +219,6 @@ void init(){
 	baked_keyrabbit_b = 1.0;
 
 	bilinear_filtering = false;
-
-	filtering_light01 = false;
-	filtering_light02 = false;
-	filtering_light03 = false;
-	filtering_light04 = false;
 }
 
 
@@ -491,11 +479,6 @@ void render(){
 	shader->setUniform1i("_iwidth",iwidth);
 
 	shader->setUniform1f("_filtering",bilinear_filtering);
-
-	shader->setUniform1f("_light1",filtering_light01);
-	shader->setUniform1f("_light2",filtering_light02);
-	shader->setUniform1f("_light3",filtering_light03);
-	shader->setUniform1f("_light4",filtering_light04);
 
 	// Codigo para el mesh	
 	glEnable(GL_NORMALIZE);
