@@ -487,6 +487,9 @@ void render(){
 	shader->setUniform1i("_pattern03",pattern03);
 	shader->setUniform1i("_pattern04",pattern04);
 
+	shader->setUniform1i("_iheight",iheight);
+	shader->setUniform1i("_iwidth",iwidth);
+
 	shader->setUniform1f("_filtering",bilinear_filtering);
 
 	shader->setUniform1f("_light1",filtering_light01);

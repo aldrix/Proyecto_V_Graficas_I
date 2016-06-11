@@ -33,17 +33,18 @@ uniform bool _light2;
 uniform bool _light3;
 uniform bool _light4;
 
-#define textureWidth 600.0
-#define textureHeight 800.0	
-#define texel_size_x 1.0 
-#define texel_size_y 1.0 
+uniform int _iheight;
+uniform int _iwidth;
 
+#define texel_size_x 1.0 / _iwidth
+#define texel_size_y 1.0 / _iheight	
 
+/*Funcion que permite aplicar un filtro bilineal a una textura*/
 vec4 texture2D_bilinear( sampler2D tex, vec2 uv ) {
 	vec2 f;
 
-	f.x	= fract( uv.x * textureWidth );
-	f.y	= fract( uv.y * textureHeight );
+	f.x	= fract( uv.x * _iwidth );
+	f.y	= fract( uv.y * _iheight );
 
 	vec4 t00 = texture2D( tex, uv + vec2( 0.0, 0.0 ));
 	vec4 t10 = texture2D( tex, uv + vec2( texel_size_x, 0.0 ));
@@ -74,13 +75,21 @@ void main(void) {
 	} 
 
 	//Tomamos las texturas.
-	vec4 cTex01 = texture2D(texBaked_flat, gl_TexCoord[0].st);;
+	vec4 cTex01 = texture2D(texBaked_flat, gl_TexCoord[0].st);
 	vec4 cTex02 = texture2D(texBaked_fill01, gl_TexCoord[0].st);
 	vec4 cTex03 = texture2D(texBaked_fill02, gl_TexCoord[0].st);
 	vec4 cTex04 = texture2D(texBaked_keyrabbit, gl_TexCoord[0].st);
 	vec4 cTex05 = texture2D(texBaked_checker, gl_TexCoord[0].st);
 
-	cTex04 = texture2D_bilinear(texBaked_keyrabbit, gl_TexCoord[0].st) * light;
+	//Activamos el filtro bilineal si se presiona la tecla correspondiente.
+	if (_filtering) { 
+		cTex01 = texture2D_bilinear(texBaked_flat, gl_TexCoord[0].st);
+		cTex02 = texture2D_bilinear(texBaked_fill01, gl_TexCoord[0].st);
+		cTex03 = texture2D_bilinear(texBaked_fill02, gl_TexCoord[0].st);
+		cTex04 = texture2D_bilinear(texBaked_keyrabbit, gl_TexCoord[0].st);
+		cTex05 = texture2D_bilinear(texBaked_checker, gl_TexCoord[0].st);
+	}
+
 
 	//Colores para el patron del piso.
 	vec4 color00 = vec4(0,0,0,1);     //Color neutro.
@@ -109,8 +118,6 @@ void main(void) {
 	cFinal = max(_mix01,0.0)*cTex01*max(_mix04,0.0)*cTex04 +  
 	         max(_mix01,0.0)*cTex01*max(_mix02,0.0)*cTex02 + 
 			 max(_mix01,0.0)*cTex01*max(_mix03,0.0)*cTex03;
-
-	cFinal = mix(cFinal,colorPattern*cTex05,0.5);
 	
 	gl_FragColor = cFinal;
 }
