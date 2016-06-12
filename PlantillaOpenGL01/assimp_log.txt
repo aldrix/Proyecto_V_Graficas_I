@@ -1,10 +1,10 @@
-Info,  T7056: Load escenario_proyecto01.obj
-Info,  T7056: Found a matching importer for this file format
-Info,  T7056: Import root directory is '.\'
-Info,  T7056: Entering post processing pipeline
-Info,  T7056: TriangulateProcess finished. All polygons have been triangulated.
-Info,  T7056: Points: 0, Lines: 0, Triangles: 2, Polygons: 0 (Meshes, X = removed)
-Info,  T7056: CalcTangentsProcess finished. Tangents have been calculated
-Info,  T7056: JoinVerticesProcess finished | Verts in: 36386 out: 13343 | ~63.3%
-Info,  T7056: Cache relevant are 2 meshes (15683 faces). Average output ACMR is 0.997003
-Info,  T7056: Leaving post processing pipeline
+Info,  T8068: Load escenario_proyecto01.obj
+Info,  T8068: Found a matching importer for this file format
+Info,  T8068: Import root directory is '.\'
+Info,  T8068: Entering post processing pipeline
+Info,  T8068: TriangulateProcess finished. All polygons have been triangulated.
+Info,  T8068: Points: 0, Lines: 0, Triangles: 2, Polygons: 0 (Meshes, X = removed)
+Info,  T8068: CalcTangentsProcess finished. Tangents have been calculated
+Info,  T8068: JoinVerticesProcess finished | Verts in: 36386 out: 13343 | ~63.3%
+Info,  T8068: Cache relevant are 2 meshes (15683 faces). Average output ACMR is 0.997003
+Info,  T8068: Leaving post processing pipeline

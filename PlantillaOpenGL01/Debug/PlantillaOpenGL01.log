@@ -1,4 +1,4 @@
-﻿Build started 6/11/2016 11:48:23 PM.
+﻿Build started 6/12/2016 11:20:16 AM.
      1>Project "C:\Users\Aldrix\Desktop\Proyecto_V_Graficas_I\PlantillaOpenGL01\PlantillaOpenGL01.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\dev\Assimp\include /IC:\dev\opengl\freeglut\include /I"C:\dev\opengl\glew-1.7.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt mainShader01.cpp
@@ -20,6 +20,7 @@
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(110): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(110): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(121): warning C4101: 'aspectratio' : variable local sin referencia
+     1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(208): warning C4305: '=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(231): warning C4305: '+=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(234): warning C4305: '-=' : truncamiento de 'double' a 'float'
      1>c:\users\aldrix\desktop\proyecto_v_graficas_i\plantillaopengl01\mainshader01.cpp(238): warning C4305: '+=' : truncamiento de 'double' a 'float'
@@ -61,4 +62,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.64
+Time Elapsed 00:00:01.58
