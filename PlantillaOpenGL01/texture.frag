@@ -99,9 +99,9 @@ void main(void) {
 	cTex04 = vec4(max(_rkeyrabbit,1.0)*cTex04.x, max(_gkeyrabbit,1.0)*cTex04.y, max(_bkeyrabbit,1.0)*cTex04.z, cTex04.w);
 
 	//Obtenemos la imagen final.
-	cFinal = (max(_mix01,0.0)*cTex01*max(_mix04,0.0)*cTex04 +  
+	cFinal = max(_mix01,0.0)*cTex01*max(_mix04,0.0)*cTex04 +  
 	         max(_mix01,0.0)*cTex01*max(_mix02,0.0)*cTex02 + 
-			 max(_mix01,0.0)*cTex01*max(_mix03,0.0)*cTex03);
+			 max(_mix01,0.0)*cTex01*max(_mix03,0.0)*cTex03;
 	
 
 	gl_FragColor = cFinal * mix(cFinal, colorPattern*cTex05, 0.5);
